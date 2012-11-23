@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#define UITableViewStyleGangnam ((UITableViewStyle)1000)
+enum { UITableViewStyleGangnam = 1000 };
 
 @interface UITableView (GangnamStyle)
 
