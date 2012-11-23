@@ -13,8 +13,8 @@
 @implementation PSYViewController
 
 - (void)loadView {
-    [self setTableView:[[UITableView alloc] initWithFrame:[[UIScreen mainScreen] bounds]
-                                                    style:UITableViewStyleGangnam]];
+    self.tableView = [[UITableView alloc] initWithFrame:[[UIScreen mainScreen] bounds]
+                                                  style:UITableViewStyleGangnam];
 }
 
 @end

@@ -84,8 +84,8 @@
 		C9CE2F891653C91200DC5A8D /* GangnamStyle */ = {
 			isa = PBXGroup;
 			children = (
-				C9CE2FA71653C94000DC5A8D /* UITableView+GangnamStyle.m */,
 				C9CE2FA61653C94000DC5A8D /* UITableView+GangnamStyle.h */,
+				C9CE2FA71653C94000DC5A8D /* UITableView+GangnamStyle.m */,
 				C9CE2F921653C91200DC5A8D /* PSYAppDelegate.h */,
 				C9CE2F931653C91200DC5A8D /* PSYAppDelegate.m */,
 				C9CE2F9B1653C91200DC5A8D /* PSYViewController.h */,
@@ -247,6 +247,7 @@
 		C9CE2FA41653C91200DC5A8D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GangnamStyle/GangnamStyle-Prefix.pch";
 				INFOPLIST_FILE = "GangnamStyle/GangnamStyle-Info.plist";
@@ -258,6 +259,7 @@
 		C9CE2FA51653C91200DC5A8D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GangnamStyle/GangnamStyle-Prefix.pch";
 				INFOPLIST_FILE = "GangnamStyle/GangnamStyle-Info.plist";
@@ -285,6 +287,7 @@
 				C9CE2FA51653C91200DC5A8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

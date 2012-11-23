@@ -14,6 +14,8 @@
 
 + (id)sharedGangnam;
 
+@property (strong,readonly,nonatomic) NSArray *lyrics;
+
 @end
 
 
@@ -22,16 +24,16 @@
 + (void)load {    
     method_exchangeImplementations(
         class_getInstanceMethod(self, @selector(initWithFrame:style:)),
-        class_getInstanceMethod(self, @selector(PSY_initWithFrame:style:))
+        class_getInstanceMethod(self, @selector(initWithFrame_PSY:style:))
     );
 }
 
-- (id)PSY_initWithFrame:(CGRect)frame style:(UITableViewStyle)style {
+- (id)initWithFrame_PSY:(CGRect)frame style:(UITableViewStyle)style {
     // Call the original initWithFrame:style: which is now
     // called PSY_initWithFrame:style: This is NOT recursive!
     // If the style is Gangnam actually use plain
     
-    self = [self PSY_initWithFrame:frame
+    self = [self initWithFrame_PSY:frame
                              style:style == UITableViewStyleGangnam ? UITableViewStylePlain : style];
     
     
@@ -46,12 +48,6 @@
 @end
 
 
-
-@interface PSYGangnam () {
-    NSArray *_lyrics;
-}
-
-@end
 
 @implementation PSYGangnam
 
@@ -71,8 +67,7 @@
     self = [super init];
     
     if (self) {
-        _lyrics = [[NSArray alloc] initWithObjects:
-                   @"Oppan Gangnam Style",
+        _lyrics = @[@"Oppan Gangnam Style",
                    @"Gangnam Style",
                    @"",
                    @"Na je nun ta sa ro un in gan jo gin yo ja",
@@ -150,9 +145,7 @@
                    @"",
                    @"Oppan Gangnam Style",
                    @"",
-                   @"© Sony/ATV Music Publishing LLC",
-                   nil
-                   ];
+                   @"© Sony/ATV Music Publishing LLC"];
     }
     
     return self;
@@ -168,8 +161,8 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:PSYGangnamCellIdentifier];
     
     if (nil == cell) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                       reuseIdentifier:PSYGangnamCellIdentifier] autorelease];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                       reuseIdentifier:PSYGangnamCellIdentifier];
                 
         [[cell textLabel] setFont:[UIFont fontWithName:@"Helvetica-Bold" size:11.0]];
     }
